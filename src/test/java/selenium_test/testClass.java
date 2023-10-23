@@ -14,7 +14,7 @@ public class testClass {
     @Test
    public void demo()
    {
-              System.setProperty("webdriver.chrome.driver", System.getenv("CHROMEDRIVER_PATH"));
+              WebDriverManager.chromedriver().setup();
 ChromeOptions options = new ChromeOptions();
 options.setBinary(System.getenv("CHROME_BIN"));
        options.addArguments("--headless");
@@ -24,7 +24,6 @@ options.setBinary(System.getenv("CHROME_BIN"));
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
 WebDriver driver = new ChromeDriver(options);
-        
         
         // WebDriverManager.chromedriver().setup();
         // WebDriver driver = new ChromeDriver();
