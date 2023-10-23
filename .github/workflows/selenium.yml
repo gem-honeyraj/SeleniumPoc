@@ -29,3 +29,8 @@ jobs:
         javac Main.java
         java Main
       working-directory: ${{ github.workspace }}
+
+
+    - name: Check GitHub Workspace
+      run: |
+       echo "GitHub Workspace: ${{ github.workspace }}"  
