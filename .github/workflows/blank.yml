@@ -9,6 +9,8 @@ jobs:
   run_tests:
     runs-on: ubuntu-latest
 
+  
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -29,4 +31,4 @@ jobs:
           # Compile and run Selenium Java script
           javac SeleniumTest.java
           java SeleniumTest
-        working-directory: ${{ github.workspace }}
+        
