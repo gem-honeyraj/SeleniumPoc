@@ -1,4 +1,8 @@
 package org.example;
+
+// import org.openqa.selenium.WebDriver;
+// import org.openqa.selenium.chrome.ChromeDriver;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -6,9 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-// import org.openqa.selenium.WebDriver;
-// import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.WebDriverListener;
 
 // import io.github.bonigarcia.wdm.WebDriverManager;
 public class Main {
@@ -26,7 +28,7 @@ public class Main {
 
         // // Close the browser
         // driver.quit();
-         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("start-maximized");
@@ -44,6 +46,6 @@ public class Main {
         String fetchedTitle=title.getText();
         System.out.println(fetchedTitle);
         driver.quit();
-        System.out.println("Hello Rahul");
+//        System.out.println("Hello World");
     }
 }

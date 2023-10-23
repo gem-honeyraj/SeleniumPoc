@@ -2,10 +2,10 @@ name: Run Selenium Tests
 on:
   push:
     branches:
-      - main # Change this to your default branch if different
+      - master # Change this to your default branch if different
   pull_request:
     branches:
-      - main # Change this to your default branch if different
+      - master # Change this to your default branch if different
 
 jobs:
   run_tests:
@@ -26,11 +26,6 @@ jobs:
 
     - name: Build and run Selenium tests
       run: |
-       javac src/main/java/org/example/Main.java
-       java -cp src/main/java org.example.Main
+        javac Main.java
+        java Main
       working-directory: ${{ github.workspace }}
-
-
-    - name: Check GitHub Workspace
-      run: |
-       echo "GitHub Workspace: ${{ github.workspace }}"  
