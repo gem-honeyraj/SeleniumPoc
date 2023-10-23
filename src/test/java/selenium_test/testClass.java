@@ -1,7 +1,4 @@
-package org.example;
-
-// import org.openqa.selenium.WebDriver;
-// import org.openqa.selenium.chrome.ChromeDriver;
+package selenium_test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -10,25 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
+public class testClass {
 
-// import io.github.bonigarcia.wdm.WebDriverManager;
-public class Main {
-    public static void main(String[] args) {
-        // // Setup WebDriver using WebDriverManager
-        // WebDriverManager.chromedriver().setup();
-
-        // // Initialize ChromeDriver
-        // WebDriver driver = new ChromeDriver();
-
-        // // Navigate to a website
-        // driver.get("https://example.com");
-
-        // // Perform Selenium actions here...
-
-        // // Close the browser
-        // driver.quit();
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    @Test
+   public void demo()
+   {
+               System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("start-maximized");
@@ -45,8 +31,8 @@ public class Main {
         WebElement title = driver.findElement(By.xpath("(//h3[text()='Selenium'])[1]"));
         String fetchedTitle=title.getText();
         System.out.println(fetchedTitle);
+       System.out.println("hello");
         driver.quit();
 
-        System.out.println("Hello World");
-    }
+   }
 }
