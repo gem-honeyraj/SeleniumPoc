@@ -29,4 +29,4 @@ jobs:
           # Compile and run Selenium Java script
           javac SeleniumTest.java
           java SeleniumTest
-        working-directory: ./path/to/your/java/project
+        working-directory: ${{ github.workspace }}
