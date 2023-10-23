@@ -26,7 +26,13 @@ jobs:
 
     - name: Build and run Selenium tests
       run: |
+<<<<<<< HEAD
         mvn clean install
 #        javac Main.java
 #        java Main
+=======
+        mvn clean test
+        # javac src/main/java/org/example/Main.java
+        # java -cp src/main/java org.example.Main
+>>>>>>> 7064812cd961951c737e10f85586917bcbc39cc5
       working-directory: ${{ github.workspace }}
