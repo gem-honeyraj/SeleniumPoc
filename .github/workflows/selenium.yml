@@ -26,8 +26,8 @@ jobs:
 
     - name: Build and run Selenium tests
       run: |
-        javac Main.java
-        java Main
+       javac src/main/java/org/example/Main.java
+       java -cp src/main/java org.example.Main
       working-directory: ${{ github.workspace }}
 
 
