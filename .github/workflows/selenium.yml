@@ -21,19 +21,15 @@ jobs:
 
     - name: Set up Chrome
       run: |
-       wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-       echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-       sudo apt-get update
-       sudo apt-get install google-chrome-stable -y
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+        sudo apt-get update
+        sudo apt-get install google-chrome-stable -y
       shell: bash
 
     - name: Set up ChromeDriver
       run: |
-       CHROMEDRIVER_VERSION="94.0.4606.61"  # Use the appropriate version matching your Chrome version
-       wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
-       unzip chromedriver_linux64.zip
-       chmod +x chromedriver
-       sudo mv chromedriver /usr/local/bin/
+        # WebDriverManager handles driver setup, so you can skip this step
       shell: bash
 
     - name: Set up Maven
