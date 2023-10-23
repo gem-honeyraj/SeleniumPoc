@@ -26,7 +26,7 @@ jobs:
 
     - name: Build and run Selenium tests
       run: |
-        mvn test -DsuiteXmlFile=testng.xml
+        mvn test 
 
         # mvn clean test
         # javac src/main/java/org/example/Main.java
