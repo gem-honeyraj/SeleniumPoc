@@ -14,16 +14,20 @@ public class testClass {
     @Test
    public void demo()
    {
-               System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+              System.setProperty("webdriver.chrome.driver", System.getenv("CHROMEDRIVER_PATH"));
+ChromeOptions options = new ChromeOptions();
+options.setBinary(System.getenv("CHROME_BIN"));
+       options.addArguments("--headless");
         options.addArguments("start-maximized");
         options.addArguments("disable-infobars");
         options.addArguments("--disable-extensions");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+WebDriver driver = new ChromeDriver(options);
+        
+        
+        // WebDriverManager.chromedriver().setup();
+        // WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com/");
         WebElement searchInput = driver.findElement(By.xpath("//textarea"));
         searchInput.sendKeys("selenium");
