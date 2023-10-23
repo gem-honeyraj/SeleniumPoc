@@ -21,19 +21,20 @@ jobs:
 
     - name: Set up Chrome
       run: |
-        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-        sudo apt-get update
-        sudo apt-get install google-chrome-stable -y
+       CHROME_VERSION="118.0.5993.88"
+       wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+       echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+       sudo apt-get update
+       sudo apt-get install google-chrome-stable=$CHROME_VERSION -y
       shell: bash
 
     - name: Set up ChromeDriver
       run: |
-        LATEST_CHROMEDRIVER_VERSION=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-        wget https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        chmod +x chromedriver
-        sudo mv chromedriver /usr/local/bin/
+       CHROMEDRIVER_VERSION="94.0.4606.61"  # Use the appropriate version matching your Chrome version
+       wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+       unzip chromedriver_linux64.zip
+       chmod +x chromedriver
+       sudo mv chromedriver /usr/local/bin/
       shell: bash
 
     - name: Set up Maven
