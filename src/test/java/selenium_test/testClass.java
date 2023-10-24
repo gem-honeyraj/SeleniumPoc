@@ -35,6 +35,8 @@ WebDriver driver = new ChromeDriver(options);
         String fetchedTitle=title.getText();
         System.out.println(fetchedTitle);
        System.out.println("hello");
+        System.out.println("hello");
+        System.out.println("hello");
         driver.quit();
        System.out.println("hello");
 
