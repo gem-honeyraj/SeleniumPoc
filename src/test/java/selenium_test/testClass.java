@@ -27,16 +27,12 @@ WebDriver driver = new ChromeDriver(options);
         
         // WebDriverManager.chromedriver().setup();
         // WebDriver driver = new ChromeDriver();
-        driver.get("https://www.google.com/");
-        WebElement searchInput = driver.findElement(By.xpath("//textarea"));
-        searchInput.sendKeys("selenium");
-        searchInput.sendKeys(Keys.RETURN);
-        WebElement title = driver.findElement(By.xpath("(//h3[text()='Selenium'])[1]"));
-        String fetchedTitle=title.getText();
-        System.out.println(fetchedTitle);
+        driver.get("https://www.facebook.com/");
+        WebElement searchInput = driver.findElement(By.xpath("//*[@id='email']"));
+        searchInput.sendKeys("testuser");
+        
+        System.out.println("facebook");
        System.out.println("hello");
-        System.out.println("hello");
-        System.out.println("hello");
         driver.quit();
        System.out.println("hello");
 
