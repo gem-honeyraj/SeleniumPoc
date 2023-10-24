@@ -34,11 +34,10 @@ WebDriver driver = new ChromeDriver(options);
         WebElement title = driver.findElement(By.xpath("(//h3[text()='Selenium'])[1]"));
         String fetchedTitle=title.getText();
         System.out.println(fetchedTitle);
-       System.out.println("hello");
-        System.out.println("hello");
-        System.out.println("hello");
+      
+        System.out.println("This is my change");
         driver.quit();
-       System.out.println("hello");
+    
 
    }
 }
